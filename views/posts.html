@@ -1,0 +1,41 @@
+<html>
+<head>
+	<title>Awkward Events</title>
+	<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+	<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-min.css">
+
+</head>
+<body>
+		<div class="pure-g wrapper">
+		  <header class="pure-u-1">
+			<div class="posts">
+				<h2>Delve into the world of awkward</h2>
+
+			</div>
+		  </header>
+	</div> 
+
+		<div class="pure-u-1 content-wrapper">
+			<div class="add">
+				<h4>Share your awkward story here</h4>
+				<form method="GET" action="/posts/new">
+					<input type="Submit">
+				</form>
+			</div>
+
+			<div class="posts">
+				<h2>Most commented stories</h2>
+				<% rows.forEach(function(e) { %>
+				    <h3> <%= e.subject %> </h3>
+                    <h3> <a href="/posts/<%=e.id%>"> <%= e.entry %> </a> </h3>
+                    <h3> <%= e.username %> </h3>
+                    <img src="<%= e.image %>"> </img>
+                    <h3> <%= e.votes %> </h3>
+
+				 <%	}) %>
+			</div>
+
+	</div>   
+
+</body>
+</html>

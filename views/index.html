@@ -1,0 +1,38 @@
+<html>
+<head>
+	<title>Ashley's Forum</title>
+	<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+	<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-min.css">
+	<link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
+</head>
+<body>
+	<div class="pure-g wrapper">
+		<header class="pure-u-1">
+			<div class="header-box">
+				<h1> Welcome to Series of Awkward Events </h1>
+
+				<form method="GET" action="/posts">
+					<input type="submit">
+				</form>
+
+               <h2>Type in your information</h2>
+                <form method="POST" action="/posts/user?_method=PUT">
+                	<h4>Username</h4>
+                	<input type="text" name="username">
+                	<h4>Password</h4>
+                	<input type="password" name="password">
+                	<h4>Avatar</h4>
+                	<input type="text" name="image">
+                	<input type="submit">
+                </form>
+
+			</div>
+		</header>	
+
+	</div>
+
+
+	
+
+</body>
+</html>

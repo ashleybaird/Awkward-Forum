@@ -1,0 +1,30 @@
+<html>
+<head>
+	<title>Add a Post</title>
+	<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+	<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-min.css">
+	
+</head>
+<body>
+	<h1>Thanks for your courage! We have all been there</h1>
+
+	<form method="POST" action="/posts">
+		<h4>Username</h2>
+		<input type="text" name="username">
+		<h4>Password</h2>
+		<input type="password" name="password">
+
+        <h2> Subject </h2>
+        <input type="text" name="subject">
+		<h2>Post</h2>
+		<TEXTAREA Name="post" ROWS=20 COLS=70> </TEXTAREA>
+		<input type="submit">
+	</form>
+    
+    <div id="wrong" class="hidden"> 
+		<h2>I'm sorry your username or password is incorrect </h2>
+    </div>
+
+  <script src="seed.js"></script>
+</body>
+</html>
