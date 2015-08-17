@@ -1,0 +1,28 @@
+{
+  "name": "projtwo",
+  "version": "1.0.0",
+  "description": "1. On the index page the user can see all of the topics listed by popularity. 2. If the user clicks the Add Post button it will render a page where the post can be written. 3. After they submit the post it is automatically saved to the database and they will be redirected to the index page. 4. There will be a navigation tab that will lead to a page that will be listed the posts that have the highest votes or comments. 5. When a user clicks on a post it will render a page with the post and its comments. 6. The posts will be ordered from newest to oldest. 7. At the bottom of the page a user can add a comment to that post. 8. The user can also upvote or downvote a post. 9. A user can search by author or title.",
+  "main": "seed.js",
+  "dependencies": {
+    "body-parser": "^1.13.3",
+    "method-override": "^2.3.5",
+    "ejs": "^2.3.3",
+    "express": "^4.13.3",
+    "request": "^2.60.0",
+    "sqlite3": "^3.0.10"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ashleybaird/Forum.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ashleybaird/Forum/issues"
+  },
+  "homepage": "https://github.com/ashleybaird/Forum#readme"
+}
