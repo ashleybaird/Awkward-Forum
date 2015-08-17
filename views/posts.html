@@ -3,39 +3,53 @@
 	<title>Awkward Events</title>
 	<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
 	<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-min.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
 
 </head>
-<body>
-		<div class="pure-g wrapper">
-		  <header class="pure-u-1">
-			<div class="posts">
-				<h2>Delve into the world of awkward</h2>
-
-			</div>
-		  </header>
-	</div> 
+<body>  
+	<div class= "container pure-g">
+		<header class="pure-u-1-1 opening stitched">
+			<h1>Delve into the world of awkward</h1>
+			<nav class="pure-menu pure-menu-horizontal">
+				<ul class="pure-menu-list">
+					<li class="pure-menu-item"><a href="/posts/likes" class="pure-menu-link">Liked</a></li>
+					<li class="pure-menu-item"><a href="/posts/comments" class="pure-menu-link">Commented</a></li>
+				</ul>
+	        </nav>
+		</header> 
 
 		<div class="pure-u-1 content-wrapper">
-			<div class="add">
-				<h4>Share your awkward story here</h4>
-				<form method="GET" action="/posts/new">
-					<input type="Submit">
+
+			<div class="pure-u-1-3 pure-u-md-1-2 pure-u-sm-1-2 search">
+				<form method="POST" action="/posts/search">
+					<h5>Search by: </h5>
+					<h6>Author</h6>
+						<input type="text" name="author">
+					<h6>Subject</h6>
+						<input type="text" name="subject">
+						<input type="submit">
 				</form>
 			</div>
-
-			<div class="posts">
-				<h2>Most commented stories</h2>
-				<% rows.forEach(function(e) { %>
-				    <h3> <%= e.subject %> </h3>
-                    <h3> <a href="/posts/<%=e.id%>"> <%= e.entry %> </a> </h3>
-                    <h3> <%= e.username %> </h3>
-                    <img src="<%= e.image %>"> </img>
-                    <h3> <%= e.votes %> </h3>
-
-				 <%	}) %>
+			<div class="pure-u-2-3  pure-u-md-1 pure-u-sm-1 posts">
+				<h3>Current Stories</h3>
+				<div class="pure-u-1-1 list">
+					<% rows.forEach(function(e) { %>
+	                    <img src="<%= e.image %>"> </img>
+	                    <h3> <%= e.username %> </h3>
+					    <h3> <%= e.subject %> </h3>
+	                    <h2> <a href="/posts/<%=e.id%>"> <%= e.entry %> </a> </h2>
+	                    <h6> Votes: <%= e.votes %>   |  Comments: <%= e.comments %> </h6>    
+					 <%	}) %>
+			    </div>
 			</div>
 
-	</div>   
+
+			<div class="pure-u-1-3  pure-u-md-1-2 pure-u-sm-1-2 add">
+				<h3>Share your awkward story here</h3>
+					<a href="/posts/new"> <img class="shadow" src="http://bensbargains.com/thecheckout/wp-content/uploads/2013/07/schoolpics_pokemon.jpg"> </a>
+			</div>
+		</div> 
+	</div>  
 
 </body>
 </html>

@@ -1,0 +1,27 @@
+<html>
+<head>
+	<title>Most popular</title>
+	<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+	<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-min.css">
+	<link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+		<div class="pure-g-container">
+			<div class="pure-u-1 pure-u-md-2-5 pure-u-sm-1-5 heading stitched">
+				<h2>Let's see whats buzzing!</h2>
+			</div>
+			<div class="pure-u-1-1 popular">
+				<% rows.forEach(function(e) { %>
+                    <img src="<%= e.image %>"> </img>
+                    <h3> <%= e.username %> </h3>
+				    <h3> <%= e.subject %> </h3>
+                    <h3> <a href="/posts/<%=e.id%>"> <%= e.entry %> </a> </h3>
+                    <h6> Votes: <%= e.votes %> | Comments: <%= e.comments %> </h6>
+                    
+
+				 <%	}); %>
+			</div>	 
+        </div>
+
+</body>
+</html>
