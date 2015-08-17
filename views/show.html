@@ -13,7 +13,7 @@
 		<div class="pure-u-1 pure-u-md-1-2 topic stitched">
 			<% post.forEach(function(e){ %>
 				<img src="<%= e.image %>"> </img>
-				<h2> Username:  <%= e.username %> </h2>
+				<h2>  <%= e.username %> </h2>
 				<h4> <%= e.subject %> </h4>
 				<h3> <%= e.entry %> </h3>
         
@@ -27,10 +27,10 @@
     </div>
       <div class="pure-u-1-1">
 		    <div class="pure-u-1-1 comments">
-					<div class="comment">
+					<div class="pure-u-1 comment">
 							<% rows.forEach(function(e){ %>
 					          <img src="<%=e.image%>"> </img>
-					          <h4><%= e.username %> </h4>
+					          <h5><%= e.username %> </h5>
 					         <h5> <%= e.message %> </h5>
 					          <h5> City, Country : <%= e.city %>, <%= e.country %> </h5>
 					        <% }); %>

@@ -26,7 +26,7 @@ app.get('/', function(req, res){
 });
 
 app.get('/posts', function(req, res){
-	db.all("SELECT  * FROM people INNER JOIN posts ON people.id = posts.people_id ORDER BY id DESC", function(error, rows){
+	db.all("SELECT  * FROM people INNER JOIN posts ON people.id = posts.people_id ORDER BY id ASC", function(error, rows){
 	    var html = fs.readFileSync('./views/posts.html', 'utf8');
 	    var render = ejs.render(html, {rows: rows});
 		res.send(render);
