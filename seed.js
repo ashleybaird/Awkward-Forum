@@ -188,14 +188,22 @@ app.post('/posts/:id/comments', function(req, res){
 	    		var comments = rows.comments;
 	    		comments++;
 	    		var parsed = JSON.parse(body);
-	    		db.run("INSERT INTO comments (message, city, country, posts_id, people_id) VALUES (?, ?, ?, ?, ?)", req.body.message, parsed.city, parsed.country, req.params.id, rows.id, function(error){
-	    				if (error) {
-	    					console.log(error);
-	    				} else {
-	    					db.run("UPDATE posts SET comments=? WHERE id=?", comments, req.params.id, function(error){
-	                            res.redirect('/posts');
-	    					});
-	    				}
+	    		db.all("SELECT*FROM people", function(error, rows){
+	    			rows.forEach(function(e){
+	                   if(req.body.username === e.username && req.body.password === e.password) {
+			    		db.run("INSERT INTO comments (message, city, country, posts_id, people_id) VALUES (?, ?, ?, ?, ?)", req.body.message, parsed.city, parsed.country, req.params.id, e.id, function(error){
+			    				if (error) {
+			    					console.log(error);
+			    				} else {
+			    					db.run("UPDATE posts SET comments=? WHERE id=?", comments, req.params.id, function(error){
+			                            res.redirect('/posts');
+			    					});
+			    				}
+			    		});
+	                   	
+	                   }
+	    				
+	    			})
 	    		});
 	    	}
 	    });
