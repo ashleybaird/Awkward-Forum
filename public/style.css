@@ -320,7 +320,6 @@ textarea {
 	
 
 .comment {
-    height: 463px;
 	overflow-y: scroll;
 }
 .comment input {
