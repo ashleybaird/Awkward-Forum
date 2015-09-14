@@ -27,15 +27,15 @@
     </div>
       <div class="pure-u-1-1">
 		    <div class="pure-u-1-1 comments">
+				<% rows.forEach(function(e){ %>
 					<div class="pure-u-1 comment">
-							<% rows.forEach(function(e){ %>
-					          <img src="<%=e.image%>"> </img>
-					          <h5><%= e.username %> </h5>
-					         <h5> <%= e.message %> </h5>
-					          <h5> City, Country : <%= e.city %>, <%= e.country %> </h5>
-					        <% }); %>
-
+					    <img src="<%=e.image%>"> </img>
+					    <h5><%= e.username %> </h5>
+					    <h5> <%= e.message %> </h5>
+					    <h5> City, Country : <%= e.city %>, <%= e.country %> </h5>
 					</div>
+				<% }); %>
+
 			</div>
 			<div class="pure-u-1-1 advice">
 					<h5>Got any advice?</h5>
